@@ -1,0 +1,8 @@
+# --------基础配置-------
+# market的根目录
+# target: /usr/local/var/www/Ele/waimai/xbfe_newretail/market
+target: /usr/local/var/www/Ele/waimai/xbfe_newretail/market
+# 文件夹/tpl命名
+tplName: clock
+
+# ----------------------

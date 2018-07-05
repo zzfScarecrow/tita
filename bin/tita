@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var program = require('commander')
+const exists = require('fs').existsSync
+const path = require('path')
+const chalk = require('chalk')
+const runner = require('../auto')
+const version = require('../package.json').version
+
+program
+  .version(version)
+  .usage('[options] filename')
+  .option('-c --crm', '生成一个crm页面')
+  .option('-a, --audit', '生成一个audit页面(默认)')
+  .action(function(filename) {
+    const fullPath = path.resolve(process.cwd(), filename)
+    console.log('filename: ', filename)
+    if (!exists(fullPath)) {
+      return console.log(chalk.red("       Error: file doen't exist"))
+    }
+    runner.start(fullPath)
+  })
+  .parse(process.argv)
+
+if (!program.args.length) program.help()
+
+process.on('uncaughtException', function(err) {
+  //打印出错误
+  console.log(err)
+  //打印出错误的调用栈方便调试
+  console.log(err.stack)
+})
