@@ -4,9 +4,9 @@
 target: /usr/local/var/www/Ele/waimai/xbfe_newretail/market
 
 # projectName
-project: audit
+project: crm
 
 # 文件夹/tpl命名
-tplName: clock
+tplName: rhino
 
 # ----------------------

@@ -21,5 +21,8 @@
     "path": "^0.12.7",
     "shelljs": "^0.8.2",
     "util": "^0.11.0"
+  },
+  "devDependencies": {
+    "ora": "^3.0.0"
   }
 }
