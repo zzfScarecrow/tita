@@ -9,31 +9,25 @@ const shelljs = require('shelljs')
 const ora = require('ora')
 
 const spinner = ora('Generating project....')
-spinner.start()
+// spinner.start()
 
 function Tita(options) {
   this.options = options
   this.project = options.project || 'audit'
   this.target = options.target
   this.tplName = options.tplName
+  this.barrier = options.barrier || ''
 }
 
 Tita.prototype.projectExists = function() {
-  const project = this.project
-  const target = this.target
-  const tplName = this.tplName
-
-  let targetFile = ''
-  switch (project) {
-    case 'audit':
-    case 'crm':
-      targetFile = `${target}/page/${project}/${tplName}.tpl`
-      break
+  if (this.barrier) {
+    return exists(this.barrier)
   }
-  return exists(targetFile)
+  return false
 }
 
 Tita.prototype.generateOutputFile = function() {
+  spinner.start()
   const distFunc = require(`./dist/${this.project}.js`)
   const { output, ...rest } = distFunc(this.options)
   /* invoke the rest functions, usually set some configuration */
@@ -64,6 +58,7 @@ Tita.prototype.generateOutputFile = function() {
       }
 
       fs.writeFileSync(o.realPath, renderStr, err => {
+        spinner.stop()
         err && console.log(chalk.red(err))
       })
     })

@@ -39,7 +39,7 @@
 
 ### yml
 
-正如 default.yml，文件中的 target 和 project 是必填项，target 是项目的根目录，project 是需要添加页面的项目的名称。
+正如 default.yml，文件中的 project 是必填项，project 是需要添加页面的项目的名称。tita 会根据这个字段去寻找 dist 文件。另外 barrier 字段是用来让 tita 判断文件是否已经存在的，可选填。
 
 ### dist
 

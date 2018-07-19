@@ -3,6 +3,9 @@
 # target: /usr/local/var/www/Ele/waimai/xbfe_newretail/market
 target: /usr/local/var/www/Ele/waimai/xbfe_newretail/market
 
+# 选一个文件用于判断当前需要生成的页面是否已经存在
+barrier: /usr/local/var/www/Ele/waimai/xbfe_newretail/market/page/audit/clock.tpl
+
 # projectName
 project: audit
 
