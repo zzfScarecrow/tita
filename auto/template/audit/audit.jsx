@@ -2,7 +2,6 @@ import React from 'react'
 import { render } from 'react-dom'
 import { HashRouter as Router, withRouter } from 'react-router-dom'
 import App from './App'
-// import '!style-loader!css-loader!antd/dist/antd.css'
 
 const AppWithRouter = withRouter(App) // withRouter 的作用是将history,location,match 三个对象传给子组件
 render(

@@ -1,14 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Route, Link, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { LocaleProvider } from 'antd'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
 import 'moment/locale/zh-cn'
 import BreadCrumb from 'components/BreadCrumb'
-import { Index, AnotherPage } from './Pages/index.js'
+import Loadable from 'react-loadable'
 
-const App = props => {
-  const { location } = props
+const Loading = () => <div>Loading...</div>
+
+const Index = Loadable({
+  loader: () => import('./Pages/HomePage'),
+  loading: Loading
+})
+const AnotherPage = Loadable({
+  loader: () => import('./Pages/AnotherPage'),
+  loading: Loading
+})
+
+const App = _ => {
   return (
     <LocaleProvider locale={zhCN}>
       <div id="locator" style={{ position: 'relative' }}>
