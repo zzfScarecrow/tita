@@ -45,6 +45,7 @@ Tita.prototype.generateOutputFile = function() {
       err,
       renderStr
     ) {
+      err && console.log(chalk.red(err))
       let fatherDir = ''
       let pathArr = o.realPath.split('/')
       pathArr.pop()

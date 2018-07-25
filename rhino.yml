@@ -1,0 +1,15 @@
+# --------基础配置-------
+# market的根目录
+# target: /usr/local/var/www/Ele/waimai/xbfe_newretail/market
+target: /usr/local/var/www/Ele/waimai/xbfe_newretail/market
+
+# 选一个文件用于判断当前需要生成的页面是否已经存在
+barrier: /usr/local/var/www/Ele/waimai/xbfe_newretail/market/page/audit/rhino.tpl
+
+# projectName
+project: auditRedux
+
+# 文件夹/tpl命名
+tplName: rhino
+
+# ----------------------
