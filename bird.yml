@@ -3,10 +3,14 @@
 # target: /usr/local/var/www/Ele/waimai/xbfe_newretail/market
 target: /usr/local/var/www/Ele/waimai/xbfe_newretail/market
 
+# 选一个文件用于判断当前需要生成的页面是否已经存在
+barrier: /usr/local/var/www/Ele/waimai/xbfe_newretail/market/page/crm/bird.tpl
+
 # projectName
-project: crm
+project: crmRedux
 
 # 文件夹/tpl命名
 tplName: bird 
+ 
 
 # ----------------------
