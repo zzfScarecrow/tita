@@ -41,7 +41,7 @@ const dist = function({ target, tplName }) {
       },
       {
         tpl: resolve(`${templatePath}/reducer.js`),
-        realPath: `${widgetPath}/reducers/${tplName}.jsx`
+        realPath: `${widgetPath}/reducers/${tplName}.js`
       },
       {
         tpl: resolve(`${templatePath}/reducerIndex.js`),

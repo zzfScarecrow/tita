@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { sagaTypes } from '../sagas/<$=tplName$>'
 import { Table } from 'antd'
+import _ from 'lodash'
 
 const HomePage = ({ dataSource, pagination, dispatch }) => {
   /* dispatch({
@@ -99,10 +100,8 @@ export default connect(state => {
     }
   ]
   let pagination = {}
-  try {
-    dataSource = data.foo.foo_list
-    pagination = list.foo.pagination
-  } catch (error) {}
+  // dataSource = _.get(data, 'foo.foo_list', [])
+  // pagination = _.get(list, 'foo.pagination', {})
   return {
     dataSource,
     pagination
