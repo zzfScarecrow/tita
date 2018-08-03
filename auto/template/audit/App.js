@@ -5,6 +5,9 @@ import { LocaleProvider } from 'antd'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
 import 'moment/locale/zh-cn'
 import BreadCrumb from 'components/BreadCrumb'
+import { Index, AnotherPage } from './Pages'
+
+/* 
 import Loadable from 'react-loadable'
 
 const Loading = () => <div>Loading...</div>
@@ -17,7 +20,7 @@ const AnotherPage = Loadable({
   loader: () => import('./Pages/AnotherPage'),
   loading: Loading
 })
-
+ */
 const App = _ => {
   return (
     <LocaleProvider locale={zhCN}>
